@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Skip Intro",
+  "version": "1.0",
+  "description": "Automatically skips intros on Prime Video",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://www.primevideo.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.primevideo.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
+
